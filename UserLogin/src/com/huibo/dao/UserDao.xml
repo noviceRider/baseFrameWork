@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huibo.dao.UserDao">
+
+	<!-- 用户登陆 -->
+	<select id="ifok" resultType="Integer">
+		select
+			count(*)
+		from
+			user
+		where
+			name = #{name} and password = #{password}
+	</select>
+	
+	<!-- 获取当前最大id -->
+	<select id="Max" resultType="Integer">
+		select
+			MAX(id)			id
+		from
+			user
+	</select>
+	<!-- 用户注册 -->
+	<insert id="login">
+		insert
+		into
+			user
+				(
+					id,
+					name,
+					password
+				)
+			values
+				(
+					#{id},
+					#{name},
+					#{password}
+				)
+	</insert>
+	
+	<!-- 查看用户名是否重复 -->
+	<select id="repetition" resultType="Integer">
+		select
+			count(*)
+		from
+			user
+		where
+			name = #{name}
+	</select>
+	
+	<!-- 查询全部用户 -->
+	<select id="query" resultType="com.huibo.po.UserPo">
+		select
+			name			name
+		from
+			user
+	</select>
+</mapper>

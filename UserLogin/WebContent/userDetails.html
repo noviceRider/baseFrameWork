@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>首页</title>
+<style type="text/css">
+	body{
+		background-image:url('img/rBACE1JP9D3T7yAOAAHSMSYJ124145.jpg');
+		background-size: 100%
+	}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	function queryBookOrAuthor(){
+		
+	}
+	
+	function books(){
+		$(location).attr('href', 'http://127.0.0.1:8080/UserLogin/books.html');
+	}
+	
+
+</script>
+</head>
+<body>
+	<div id="userDetails" style="position: absolute;top: 40%;left: 30%;">
+		<input id="bookWord" style="padding: 10px;width:500px;" placeholder="书名、作者名">
+		<input type="button" style="width:100px;height:40px;background: grey" value="搜 索一下" onclick="queryBookOrAuthor()">
+		<input type="button" style="width:100px;height:40px;background: grey;" value="书城" onclick="books()">
+	</div>
+</body>
+</html>
